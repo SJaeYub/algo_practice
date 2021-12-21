@@ -36,15 +36,33 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if(!check(i, j)) {            //새 말을 놓을 수 있는 자리인가 아닌가?
+                if(check(i, j)) {            //새 말을 놓을 수 있는 자리인가 아닌가?
 
                 }
             }
         }
     }
 
-    private static boolean check(int i, int j) {
+    private static boolean check(int row, int col) {
 
+        for (int i = 0; i < n; i++) {
+            if(visited[row][i]) {
+                return false;
+            }
+            if(visited[i][col]) {
+                return false;
+            }
+            int temp_row_minus = row - i;
+            int temp_col_minus = col - i;
+            int temp_row_plus = row + i;
+            int temp_col_plus = col + i;
+            if (temp_row_minus >= 0 && temp_col_minus >= 0 && temp_row_plus < n && temp_col_plus < n) {
+                if (visited[temp_row_minus][temp_col_minus] || visited[temp_row_plus][temp_col_plus]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 
