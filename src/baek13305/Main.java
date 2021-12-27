@@ -28,7 +28,7 @@ public class Main {
         ArrayList<Integer> station_list = select_gas(price[0]);
 
         int curr = 0;
-        int ans = 0;
+        long ans = 0;
         while (curr < n) {
             int road = 0;
             int price_mid = 0;
