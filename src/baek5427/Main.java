@@ -1,5 +1,8 @@
 package baek5427;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -26,9 +29,10 @@ public class Main {
     static int[] dc = {0, 0, -1, 1};
     static char[][] map;
     static boolean[][] visited;
+    static String temp;
     static Queue<Position> q = new LinkedList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
 
         int t = sc.nextInt();
@@ -42,11 +46,14 @@ public class Main {
             visited = new boolean[h][w];
 
             int temp_start_row = 0, temp_start_col = 0;
-
             for (int i = 0; i < h; i++) {
-                String temp = sc.next();
+                temp = sc.next();
                 for (int j = 0; j < temp.length(); j++) {
                     map[i][j] = temp.charAt(j);
+
+                    if (map[i][j] == '#') {
+                        visited[i][j] = true;
+                    }
 
                     if (map[i][j] == '@') {
                         temp_start_row = i;
@@ -55,6 +62,7 @@ public class Main {
                 }
             }
             check_fire();
+            visited[temp_start_row][temp_start_col] = true;
             q.add(new Position(temp_start_row, temp_start_col, 0, 2));      //사람이라면
 
             bfs();
@@ -88,7 +96,7 @@ public class Main {
                     }
 
                     if (curr.status == 1) {                 //불이라면
-                        if (map[mr][mc] != '*') {
+                        if (!visited[mr][mc] && map[mr][mc] != '*') {
                             map[mr][mc] = 0;
                             visited[mr][mc] = true;
                             q.add(new Position(mr, mc, 0, curr.status));
@@ -113,6 +121,7 @@ public class Main {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 if (map[i][j] == '*') {
+                    visited[i][j] = true;
                     q.add(new Position(i, j, 0, 1));
                 }
             }
