@@ -7,40 +7,26 @@ import java.util.Scanner;
 
 public class Main {
 
-    static class Fire {
-        int row;
-        int col;
-        int status;
-
-        Fire(int a, int b, int c) {
-            this.row = a;
-            this.col = b;
-            this.status = c;
-        }
-    }
-
     static class Position {
         int row;
         int col;
         int cnt;
-        char[][] temp_map;
-        boolean[][] visited;
+        int status;
 
-        Position(int a, int b, int c, char[][] d, boolean[][] e) {
+        Position(int a, int b, int c, int d) {
             this.row = a;
             this.col = b;
             this.cnt = c;
-            this.temp_map = d;
-            this.visited = e;
+            this.status = d;
         }
     }
 
     static int w, h;
     static int[] dr = {-1, 1, 0, 0};
     static int[] dc = {0, 0, -1, 1};
+    static char[][] map;
     static boolean[][] visited;
     static Queue<Position> q = new LinkedList<>();
-//    static ArrayList<Fire> arr_list = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -48,12 +34,11 @@ public class Main {
         int t = sc.nextInt();
         for (int test_case = 0; test_case < t; test_case++) {
             q.clear();
-//            arr_list.clear();
 
             w = sc.nextInt();
             h = sc.nextInt();
 
-            char[][] map = new char[h][w];
+            map = new char[h][w];
             visited = new boolean[h][w];
 
             int temp_start_row = 0, temp_start_col = 0;
@@ -69,8 +54,8 @@ public class Main {
                     }
                 }
             }
-
-            q.add(new Position(temp_start_row, temp_start_col, 0, map, visited));
+            check_fire();
+            q.add(new Position(temp_start_row, temp_start_col, 0, 2));      //사람이라면
 
             bfs();
 
@@ -78,28 +63,19 @@ public class Main {
     }
 
     private static void bfs() {
-
         while (!q.isEmpty()) {
             Position curr = q.poll();
-            char[][] temp2 = curr.temp_map;
-            firing(temp2);
-            ArrayList<Fire> fire_list = check_fire(temp2);
-            expect_fire(fire_list, temp2);
-            curr.visited[curr.row][curr.col] = true;
-            temp2[curr.row][curr.col] = '@';
+            visited[curr.row][curr.col] = true;
 
-            System.out.println("-----------------------------------");
-
-            for (int i = 0; i < h; i++) {
-                for (int j = 0; j < w; j++) {
-                    System.out.print(temp2[i][j]);
-                }
-                System.out.println();
+            if (curr.status == 1) {
+                map[curr.row][curr.col] = '*';
             }
 
-            if (curr.row == w - 1 || curr.col == h - 1) {
-                System.out.println(curr.cnt + 2);
-                return;
+            if (curr.status == 2) {
+                if (curr.row == h - 1 || curr.col == w - 1 || curr.row == 0 || curr.col == 0) {
+                    System.out.println(curr.cnt + 1);
+                    return;
+                }
             }
 
             for (int i = 0; i < 4; i++) {
@@ -107,13 +83,24 @@ public class Main {
                 int mc = dc[i] + curr.col;
 
                 if (mr >= 0 && mr < h && mc >= 0 && mc < w) {
-                    if (temp2[mr][mc] == '.' || temp2[mr][mc] == 0) {
-                        if (!curr.visited[mr][mc]) {
-                            curr.visited[mr][mc] = true;
+                    if (map[mr][mc] == '#') {
+                        continue;
+                    }
 
-                            q.add(new Position(mr, mc, curr.cnt + 1, temp2, curr.visited));
+                    if (curr.status == 1) {                 //불이라면
+                        if (map[mr][mc] != '*') {
+                            map[mr][mc] = 0;
+                            visited[mr][mc] = true;
+                            q.add(new Position(mr, mc, 0, curr.status));
                         }
                     }
+                    if (curr.status == 2) {
+                        if (!visited[mr][mc] && map[mr][mc] == '.') {
+                            visited[mr][mc] = true;
+                            q.add(new Position(mr, mc, curr.cnt + 1, curr.status));
+                        }
+                    }
+
                 }
             }
         }
@@ -122,45 +109,14 @@ public class Main {
         return;
     }
 
-    private static void firing(char[][] temp_map) {
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
-                if (temp_map[i][j] == 0) {
-                    temp_map[i][j] = '*';
-                }
-            }
-        }
-    }
-
-    private static void expect_fire(ArrayList<Fire> fire_list, char[][] temp_map) {
-        for (Fire fire : fire_list) {
-            for (int i = 0; i < 4; i++) {
-                int mr = dr[i] + fire.row;
-                int mc = dc[i] + fire.col;
-
-                if (mr >= 0 && mr < h && mc >= 0 && mc < w) {
-                    if (temp_map[mr][mc] == '.' || temp_map[mr][mc] == '@') {
-                        temp_map[mr][mc] = 0;
-                    }
-                }
-            }
-        }
-    }
-
-    private static ArrayList<Fire> check_fire(char[][] map) {
-
-        ArrayList<Fire> arr_list = new ArrayList<>();
-
+    private static void check_fire() {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 if (map[i][j] == '*') {
-                    arr_list.add(new Fire(i, j, 1));
+                    q.add(new Position(i, j, 0, 1));
                 }
             }
         }
-
-        return arr_list;
     }
-
 
 }
