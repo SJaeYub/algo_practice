@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c4903205-6847-4881-9445-f0af89bd6a6f" name="Changes" comment="algo_practice">
+      <change afterPath="$PROJECT_DIR$/src/baek1389/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ygLLrwXtANoiwe2lNguvyDCPqN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baek1389.Main" />
+      <module name="알고리즘 문풀" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baek1389.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baek9663.Main" />
+      <module name="알고리즘 문풀" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baek9663.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baek9012.Main" />
+      <module name="알고리즘 문풀" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baek9012.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="samsungSDS_elice.gameroom.Main" />
+      <module name="알고리즘 문풀" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="samsungSDS_elice.gameroom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baek1759.Main" />
+      <module name="알고리즘 문풀" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baek1759.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baek15650.Main" />
+      <module name="알고리즘 문풀" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baek15650.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baek1946.Main" />
+      <module name="알고리즘 문풀" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="baek1946.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (3)" />
+        <item itemvalue="Application.Main (5)" />
+        <item itemvalue="Application.Main (4)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4903205-6847-4881-9445-f0af89bd6a6f" name="Changes" comment="" />
+      <created>1632668234376</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632668234376</updated>
+      <workItem from="1632668235768" duration="153000" />
+      <workItem from="1633241588404" duration="5589000" />
+      <workItem from="1633262753287" duration="34119000" />
+      <workItem from="1633682554191" duration="8749000" />
+      <workItem from="1633959007235" duration="2530000" />
+      <workItem from="1634210373278" duration="7733000" />
+      <workItem from="1634798336507" duration="91000" />
+      <workItem from="1635437195258" duration="2152000" />
+      <workItem from="1635832702788" duration="725000" />
+      <workItem from="1636038182997" duration="287000" />
+      <workItem from="1636038806185" duration="11000" />
+      <workItem from="1636041632799" duration="681000" />
+      <workItem from="1636049852729" duration="6000" />
+      <workItem from="1636074724019" duration="4772000" />
+      <workItem from="1636085650848" duration="10000" />
+      <workItem from="1636086307043" duration="17000" />
+      <workItem from="1636086453170" duration="14000" />
+      <workItem from="1636097721087" duration="2517000" />
+      <workItem from="1636177821656" duration="2997000" />
+      <workItem from="1636288431309" duration="51315000" />
+      <workItem from="1636610424669" duration="25000" />
+      <workItem from="1636681994629" duration="30779000" />
+      <workItem from="1637468439328" duration="1184000" />
+      <workItem from="1637723905819" duration="1930000" />
+      <workItem from="1639201013255" duration="446000" />
+      <workItem from="1639202541563" duration="358000" />
+      <workItem from="1640240882467" duration="3583000" />
+    </task>
+    <task id="LOCAL-00001" summary="algo_practice">
+      <created>1640054474284</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640054474284</updated>
+    </task>
+    <task id="LOCAL-00002" summary="algo_practice">
+      <created>1640055632842</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640055632842</updated>
+    </task>
+    <task id="LOCAL-00003" summary="algo_practice">
+      <created>1640055717049</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640055717049</updated>
+    </task>
+    <task id="LOCAL-00004" summary="algo_practice">
+      <created>1640088019756</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640088019756</updated>
+    </task>
+    <task id="LOCAL-00005" summary="algo_practice">
+      <created>1640182297404</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640182297404</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="algo_practice" />
+    <option name="LAST_COMMIT_MESSAGE" value="algo_practice" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

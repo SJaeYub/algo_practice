@@ -9,7 +9,7 @@ public class Main {
     static boolean[][] visited;
     static int[] dr = {-1, 1, 0, 0};
     static int[] dc = {0, 0, -1, 1};
-
+//baek14500 hard 테트로미노는 dfs를 이용하면 모든 경우의 수로 탐색 가능
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
