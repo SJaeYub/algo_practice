@@ -1,7 +1,8 @@
 package baek7568;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
 
@@ -20,13 +21,14 @@ public class Main {
     static int n;
     static ArrayList<Physical> arr_list = new ArrayList<>();
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        n = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        n = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < n; i++) {
-            arr_list.add(new Physical(sc.nextInt(), sc.nextInt(), 0));
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+            arr_list.add(new Physical(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), 0));
         }
 
         check(0, n);
