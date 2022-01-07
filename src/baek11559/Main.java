@@ -40,7 +40,6 @@ public class Main {
 
         while(flag) {
             flag = false;
-            int temp = ans;
             visited = new boolean[12][6];
             for (int j = 0; j < 12; j++) {
                 for (int i = 0; i < 6; i++) {
@@ -109,15 +108,6 @@ public class Main {
                     }
                 }
             }
-        }
-    }
-
-    static void printMap() {
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 6; j++) {
-                System.out.print(map[i][j]);
-            }
-            System.out.println();
         }
     }
 }
