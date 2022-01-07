@@ -81,7 +81,7 @@ public class Main {
                 int mc = dc[i] + curr.col;
 
                 if (mr >= 0 && mr < 12 && mc >= 0 && mc < 6) {
-                    if (!visited[mr][mc] && map[mr][mc] == color) {
+                    if (!visited[mr][mc] && map[mr][mc] == curr.color) {
                         visited[mr][mc] = true;
                         q.add(new Position(mr, mc, map[mr][mc]));
                     }
