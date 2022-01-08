@@ -53,11 +53,7 @@ public class Main {
 
         Node[] arr = dijkstra();
 
-        for (Node curr : arr) {
-            if (curr.to == target2) {
-                System.out.println(curr.weight);
-            }
-        }
+        System.out.println(arr[target2].weight);
     }
 
     static Node[] dijkstra() {
