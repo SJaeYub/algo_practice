@@ -66,8 +66,8 @@ public class Main {
                 temp_h -= dist;
                 temp_h += h;
 
-                if (temp_h >= home_dist) {
-                    ans = Math.max(ans, temp_ans);
+                if (temp_h >= home_dist) {          //집에 갈수있다
+                    ans = Math.max(ans, temp_ans);          //집에 못가도 다음 민초를 먹고 체력을 얻어 집에 갈수도 있기 때문에 else 처리 안한다
                 }
 
                 temp_row = arr_list.get(k).row;
