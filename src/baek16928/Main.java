@@ -50,7 +50,6 @@ public class Main {
 
 
         bfs();
-        System.out.println(ans);
     }
 
     static void bfs() {
@@ -61,8 +60,8 @@ public class Main {
 
             int position = (curr.row * 10 + curr.col) + 1;
             if (position == 100) {
-                ans = Math.min(ans, curr.cnt);
-                continue;
+                System.out.println(curr.cnt);
+                return;
             }
 
             for (int i = 1; i <= 6; i++) {
