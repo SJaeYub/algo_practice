@@ -1,5 +1,7 @@
 package baek14496;
 
+import org.w3c.dom.Node;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -54,42 +56,42 @@ public class Main {
             arr_list[to].add(new Edges(from, 1));
         }
 
-        Edges[] ans = dijkstra(a);
+        int[] ans = dijkstra(a);
 
-        if (ans[b].weight != Integer.MAX_VALUE) {
+        if (ans[b] != Integer.MAX_VALUE) {
             flag = true;
         }
 
         if (!flag) {
             System.out.println(-1);
         } else {
-            System.out.println(ans[b].weight);
+            System.out.println(ans[b]);
         }
     }
 
-    static Edges[] dijkstra(int from) {
+    static int[] dijkstra(int from) {
         PriorityQueue<Edges> pq = new PriorityQueue<>();
         boolean[] visited = new boolean[n + 1];
-        Edges[] d = new Edges[n + 1];
+        int[] d = new int[n + 1];
 
         for (int i = 0; i <= n; i++) {
             if (i == from) {
-                d[i] = new Edges(i, 0);
+                d[i] = 0;
             } else {
-                d[i] = new Edges(i, Integer.MAX_VALUE);
+                d[i] = Integer.MAX_VALUE;
             }
         }
 
-        pq.add(d[from]);
+        pq.add(new Edges(from, 0));
 
         while (!pq.isEmpty()) {
             Edges curr = pq.poll();
 
             for (Edges next : arr_list[curr.to]) {
                 if (!visited[next.to]) {
-                    if (d[next.to].weight > d[curr.to].weight + next.weight) {
-                        d[next.to].weight = d[curr.to].weight + next.weight;
-                        pq.add(d[next.to]);
+                    if (d[next.to] > d[curr.to] + next.weight) {
+                        d[next.to] = d[curr.to] + next.weight;
+                        pq.add(new Edges(next.to, d[next.to]));
                     }
                 }
             }
