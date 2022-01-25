@@ -1,4 +1,4 @@
-package baek17780_ing;
+package baek17780;
 
 import java.io.BufferedReader;
 import java.io.IOException;
