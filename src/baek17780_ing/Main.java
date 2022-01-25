@@ -61,10 +61,6 @@ public class Main {
             object_order[i + 1][1] = col;
         }
 
-        for (int[] ints : object_order) {
-            System.out.println(ints[0] + " " + ints[1]);
-        }
-
         int ans = 0;
         while (!ans_flag) {
             ans++;
@@ -81,9 +77,6 @@ public class Main {
     }
 
     static boolean check_index(int row, int col, int num) {      //움직일 순서의 기물의 위치정보를 받아서
-
-        System.out.println(num + " " + row + " " + col + " "
-         + virtual_map[row][col].peek().dir);
 
         if (virtual_map[row][col].peek().num == num) {              //바닥 기물 번호가 자기자신이라면
             return true;
@@ -118,25 +111,23 @@ public class Main {
                 next_box_col = map[next_row][next_col];
 
                 if (next_box_col == 0) {                //흰
-                    move(curr_row, curr_col, next_row, next_col);
+                    move(curr_row, curr_col, next_row, next_col, 0);
                 } else if (next_box_col == 1) {             //빨
-                    move(curr_row, curr_col, next_row, next_col);
+                    move(curr_row, curr_col, next_row, next_col, 1);
 
-                    reverse_index(next_row, next_col);
 
-               } else {                                    //파
+                } else {                                    //파
                     continue;
                 }
 
             } else {        //벗어나지 않는 경우에
                 next_box_col = map[next_row][next_col];
                 if (next_box_col == 0) {                //흰
-                    move(curr_row, curr_col, next_row, next_col);
+                    move(curr_row, curr_col, next_row, next_col, 0);
 
                 } else if (next_box_col == 1) {             //빨
-                    move(curr_row, curr_col, next_row, next_col);
+                    move(curr_row, curr_col, next_row, next_col, 1);
 
-                    reverse_index(next_row, next_col);
 
                 } else {                                    //파
                     change_dir(curr_row, curr_col);             //방향을 바꿔주고
@@ -149,12 +140,10 @@ public class Main {
                     } else {
                         next_box_col = map[next_row][next_col];
                         if (next_box_col == 0) {                //흰
-                            move(curr_row, curr_col, next_row, next_col);
+                            move(curr_row, curr_col, next_row, next_col, 0);
 
                         } else if (next_box_col == 1) {             //빨
-                            move(curr_row, curr_col, next_row, next_col);
-
-                            reverse_index(next_row, next_col);
+                            move(curr_row, curr_col, next_row, next_col, 1);
 
                         } else {                                    //파
                             continue;
@@ -162,8 +151,6 @@ public class Main {
                     }
                 }
             }
-            System.out.println(curr.num + " " + next_row + " " + next_col
-            + " " + virtual_map[next_row][next_col].peek().dir);
         }
         return;
     }
@@ -196,7 +183,10 @@ public class Main {
         }
     }
 
-    static void move(int row, int col, int next_r, int next_c) {
+    static void move(int row, int col, int next_r, int next_c, int opt) {
+        if (opt == 1) {
+            reverse_index(row, col);
+        }
         while (!virtual_map[row][col].isEmpty()) {
             Object curr = virtual_map[row][col].poll();         //기존꺼에서 뽑아다
 
@@ -209,15 +199,7 @@ public class Main {
                 return;
             }
         }
-    }
 
-    private static void print_vir_map() {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                System.out.print(virtual_map[i][j].size() + " ");
-            }
-            System.out.println();
-        }
-    }
 
+    }
 }
