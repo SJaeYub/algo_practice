@@ -1,39 +1,52 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Practice {
 
-    static class Test {
-        int row;
-        int col;
-        int cnt = 0;
+    static int n, m;
+    static int[] arr;
+    static StringTokenizer st;
+    static boolean[] visited;
+    static int[] ans_arr;
 
-        Test(int r, int c) {
-            this.row = r;
-            this.col = c;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        st = new StringTokenizer(br.readLine(), " ");
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+
+        visited = new boolean[n];
+        arr = new int[n];
+        ans_arr = new int[m];
+
+        st = new StringTokenizer(br.readLine(), " ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+
+        Arrays.sort(arr);
+
+        dfs(0);
+    }
+
+    static void dfs(int idx) {
+        if (idx == m) {
+            for (int i = 0; i < m; i++) {
+                System.out.print(ans_arr[i] + " ");
+            }
+            System.out.println();
+            return;
+        }
+
+        for (int i = idx; i < n; i++) {
+            ans_arr[idx] = arr[i];
+            dfs(idx + 1);
+
         }
     }
-
-    public static void main(String[] args) {
-        ArrayList<Test> arrayList = new ArrayList<>();
-        Queue<Test> q = new LinkedList<>();
-
-        Test test = new Test(1, 1);
-        arrayList.add(test);
-        q.add(test);
-
-        System.out.println(arrayList.get(0).cnt);
-        System.out.println(q.peek().cnt);
-        q.peek().cnt++;
-        System.out.println(arrayList.get(0).cnt);
-    }
-
-    static void changeTest(Test test) {
-        System.out.println(test.cnt);
-
-        System.out.println(test.cnt);
-    }
-
-
 }
