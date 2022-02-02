@@ -1,51 +1,36 @@
 package baek10816;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-//        Scanner sc = new Scanner(System.in);
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-//        int n = sc.nextInt();
-        int n = bf.read();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         HashMap<Integer, Integer> map = new HashMap<>();
+        HashSet<Integer> set = new HashSet<>();
+        int n = Integer.parseInt(br.readLine());
 
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < n; i++) {
-//            int temp = sc.nextInt();
-//            map.put(temp, map.getOrDefault(temp, 0) + 1);
-            int temp = bf.read();
-            map.put(temp, map.getOrDefault(temp, 0) + 1);
+            int num = Integer.parseInt(st.nextToken());
+
+            map.put(num, map.getOrDefault(num, 0) + 1);
+            set.add(num);
         }
 
-
-
-        int m = bf.read();;
-        int[] find_deck = new int[m];
-        Set<Integer> integers = map.keySet();
-
+        int m = Integer.parseInt(br.readLine());
+        st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < m; i++) {
-            boolean flag = false;
-            find_deck[i] = bf.read();;
-            for (Integer key : map.keySet()) {
-                if(key == find_deck[i]) {
-//                    System.out.print(map.get(key) + " ");
-                    bw.write(map.get(key) + " ");
-                    flag = true;
-                    break;
-                }
-            }
-            if(flag == false) {
-//                System.out.print(0 + " ");
-                bw.write(0 + " ");
+            int num = Integer.parseInt(st.nextToken());
+
+            if (!set.contains(num)) {
+                System.out.print(0 + " ");
+            } else {
+                System.out.print(map.get(num) + " ");
             }
 
         }
-
     }
 }
