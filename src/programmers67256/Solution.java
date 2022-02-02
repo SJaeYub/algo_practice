@@ -16,7 +16,7 @@ public class Solution {
         }
     }
 
-    static int[][] keyPad = {{1,2,3}, {4,5,6}, {7,8,9}, {-1, 0, -2}};
+    static int[][] keyPad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {-1, 0, -2}};
     static int[] dr = {-1, 1, 0, 0};
     static int[] dc = {0, 0, -1, 1};
 
@@ -38,12 +38,12 @@ public class Solution {
         StringBuilder sb = new StringBuilder();
 
         char[] ans_arr = new char[numbers.length];
-        for(int i = 0; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             int num = numbers[i];
             char finger = select_hand(num, hand_position[0], hand_position[1], hand);
 
             sb.append(finger);
-            if(finger =='L') {
+            if (finger == 'L') {
                 hand_position[0] = num;
             } else {
                 hand_position[1] = num;
@@ -72,9 +72,9 @@ public class Solution {
         middle_col.add(8);
         middle_col.add(0);
 
-        if(right_hand.contains(num)) {
+        if (right_hand.contains(num)) {
             result = 'R';
-        } else if(left_hand.contains(num)) {
+        } else if (left_hand.contains(num)) {
             result = 'L';
         } else {
             char finger = bfs(num, curr_left, curr_right, hand);
@@ -93,31 +93,31 @@ public class Solution {
         int[] arr = new int[2];
         q.add(new Position(map[0], map[1], 0));
 
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             Position curr = q.poll();
 
-            if(!visited[curr.row][curr.col]) {
+            if (!visited[curr.row][curr.col]) {
                 visited[curr.row][curr.col] = true;
             }
 
-            if(keyPad[curr.row][curr.col] == curr_left) {
+            if (keyPad[curr.row][curr.col] == curr_left) {
                 arr[0] = curr.dist;
                 flag_l = true;
-            } else if(keyPad[curr.row][curr.col] == curr_right) {
+            } else if (keyPad[curr.row][curr.col] == curr_right) {
                 arr[1] = curr.dist;
                 flag_r = true;
             }
 
-            if(flag_r && flag_l) {
+            if (flag_r && flag_l) {
                 break;
             }
 
-            for(int i = 0; i < 4; i++) {
+            for (int i = 0; i < 4; i++) {
                 int mr = dr[i] + curr.row;
                 int mc = dc[i] + curr.col;
 
-                if(mr >= 0 && mr < 4 && mc >= 0 && mc < 3) {
-                    if(!visited[mr][mc]) {
+                if (mr >= 0 && mr < 4 && mc >= 0 && mc < 3) {
+                    if (!visited[mr][mc]) {
                         visited[mr][mc] = true;
                         q.add(new Position(mr, mc, curr.dist + 1));
                     }
@@ -125,12 +125,12 @@ public class Solution {
             }
         }
 
-        if(arr[0] < arr[1]) {
+        if (arr[0] < arr[1]) {
             result = 'L';
-        } else if(arr[0] > arr[1]) {
+        } else if (arr[0] > arr[1]) {
             result = 'R';
         } else {
-            if(hand.equals("left")) {
+            if (hand.equals("left")) {
                 result = 'L';
             } else {
                 result = 'R';
@@ -142,7 +142,7 @@ public class Solution {
 
     static int[] search_mapping(int num) {
         int[] result = new int[2];
-        if(num == 1) {
+        if (num == 1) {
             result[0] = 0;
             result[1] = 0;
         } else if (num == 2) {
