@@ -1,38 +1,46 @@
 package baek15651;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
 
-    static int[] answer;
     static int n, m;
+    static int[] ans;
+    static boolean[] visited;
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
-        answer = new int[m];
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+
+        visited = new boolean[n + 1];
+        ans = new int[m];
+
         dfs(0);
         bw.flush();
     }
 
-    private static void dfs(int idx) throws IOException {
-        if (idx == m) {
-            for (int i = 0; i < m; i++) {
-                bw.write(Integer.toString(answer[i]) + " ");
+    static void dfs(int cnt) throws IOException {
+        if (cnt == m) {
+            for (int an : ans) {
+//                System.out.print(an + " ");
+                bw.write(an + " ");
             }
             bw.newLine();
             return;
         }
 
-        for (int i = 0; i < n; i++) {
-            answer[idx] = i + 1;
-            dfs(idx + 1);
+        for (int i = 1; i <= n; i++) {
+//            if (!visited[i]) {
+                visited[i] = true;
+                ans[cnt] = i;
+                dfs(cnt + 1);
+                visited[i] = false;
+//            }
         }
     }
-
 }
