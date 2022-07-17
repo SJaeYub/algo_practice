@@ -17,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-//        System.setIn(new FileInputStream("res/input.txt"));
+//        System.setIn(new FileInputStream("src/swea5658/input.txt"));
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
 
