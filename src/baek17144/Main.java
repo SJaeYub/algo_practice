@@ -80,36 +80,14 @@ public class Main {
             }
         }
 
-//        for (int i = 1; i <= R; i++) {
-//            for (int j = 1; j <= C; j++) {
-//                System.out.print(map[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
         for (int k = 0; k < T; k++) {
             addDust(dust_q);
 
-//            System.out.println("확산 후");
-//            for (int i = 1; i <= R; i++) {
-//                for (int j = 1; j <= C; j++) {
-//                    System.out.print(map[i][j] + " ");
-//                }
-//                System.out.println();
-//            }
-
             airCleaner(cleaner);
-
-//            System.out.println("공기청정기 실행 후");
-//            for (int i = 1; i <= R; i++) {
-//                for (int j = 1; j <= C; j++) {
-//                    System.out.print(map[i][j] + " ");
-//                }
-//                System.out.println();
-//            }
 
             ans = -1;
             dust_q = new LinkedList<>();
-//            visited = new boolean[R + 1][C + 1];
+
             ans = search_dust(1, 1, map[1][1]);
 
             if (k == T - 1) {   //이때 탐색해서 총 먼지의 양 출력
